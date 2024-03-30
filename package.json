@@ -1,0 +1,25 @@
+{
+  "name": "email-spoof",
+  "version": "1.0.0",
+  "description": "Funny lil",
+  "main": "spoof.js",
+  "dependencies": {
+    "nodemailer": "^6.9.13"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NotReallyJustin/Email-Spoof.git"
+  },
+  "keywords": [
+    "email"
+  ],
+  "author": "Not Justin",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/NotReallyJustin/Email-Spoof/issues"
+  },
+  "homepage": "https://github.com/NotReallyJustin/Email-Spoof#readme"
+}
