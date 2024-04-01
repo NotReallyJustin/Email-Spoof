@@ -1,4 +1,5 @@
 const nodemailer = require("nodemailer");
+const fs = require("fs");
 
 // Create a transport object to send our email through
 // nodemailer automatically configrues the port
@@ -14,11 +15,20 @@ const transporter = nodemailer.createTransport({
     port: 25            // For some reason, Stevens mail is still using the old port for SMTP
 });
 
+// Read text to send
+// If you're building this off Github, you'll need to create your own email.txt since I added that to .gitignore
+let email_content = fs.readFileSync("./email.txt", {encoding: 'utf-8'});
+
 transporter.sendMail({
     from: 'Nariman Farvardin <nfarvard@stevens.edu>',
-    to: 'insert_email_here@stevens.edu',
-    subject: 'Hello World',
-    text: 'testing'
+    to: 'RANDOM_EMAIL_HERE',
+    subject: 'RANDOM_SUBJECT_HERE',
+    text: email_content,
+    attachments: [
+        {
+            path: `C:/Users/Justi/OneDrive/Desktop/Code/Email-Spoof/Instructions.jpg`
+        }
+    ]
 }, (err, info) => {
     if (err)
     {
